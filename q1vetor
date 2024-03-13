@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h> 
+#define TAMANHO 9
+
+int main()
+{
+    int n[TAMANHO] = {1,2,3,4,5,6,7,8,9,};
+    int d,i,limite;
+    int v; 
+
+
+    v=1;
+
+    for(i=0; i<TAMANHO ;i++)
+    {
+        if (n[i] > 1) { 
+            d = 2;
+            v = 1;
+            limite = sqrt(n[i]); 
+            while(v && d <= limite) 
+             {
+               
+                if (n[i] % d  == 0){ 
+                    
+                    v = 0;
+                }
+                
+                d++;
+             } 
+            
+            if (v) 
+                printf("O numero %d, na posicao: n[%d] e primo.\n", n[i],i);
+        }
+    }
+    return 0;   
+}
